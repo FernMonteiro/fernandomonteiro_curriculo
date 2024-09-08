@@ -1,0 +1,271 @@
+/* Importa as fontes */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+/* Reset de margem e espaçamento para todos os elementos, define box-sizing e espaçamento de linha */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.5; /* Espaçamento de 1.5 entre linhas */
+}
+
+/* Estilização do corpo da página com imagem de fundo */
+body {
+    background-image: url(ft45.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; /* A imagem cobre o contêiner */
+    background-position: center -90px; /* Centraliza e ajusta verticalmente */
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: justify;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 70px; /* Espaçamento para navbar fixa */
+}
+
+/* Variável para controlar a velocidade da animação de crescer/encolher dos ícones de contato*/
+:root {
+    --grow-shrink-duration: 4s;
+}
+
+/* Cabeçalho fixo com barra de navegação */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1px 2%;
+    background-color: rgba(27, 26, 26, 0.671);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100; /* Garante que o header fique acima de outros elementos */
+}
+
+/* Estilização da assinatura */
+.assinatura {
+    color: #ffffff;
+    font-family: 'Great Vibes', cursive;
+    font-size: 30px;
+    white-space: nowrap; /* Evita quebras de linha */
+}
+
+/* Estilização da navbar */
+.navbar {
+    display: flex;
+    justify-content: center; /* Centraliza os links da navbar */
+    align-items: center;
+}
+
+/* Estilização dos links da navbar */
+.navbar .links {
+    display: flex;
+    gap: 50px; /* Espaço entre os links */
+    margin-left: 0px;
+}
+
+/* Estilização dos ícones da navbar */
+.navbar .icons {
+    color: #7720e9;
+    display: flex;
+    gap: 15px; /* Espaço entre ícones */
+    margin-left: 20px; /* Espaço entre links e ícones */
+}
+
+/* Estilização dos links */
+.navbar a {
+    font-family: "Odibee Sans", sans-serif;
+    font-size: 22px;
+    color: #f1eded94;
+    text-decoration: none;
+    font-weight: 100;
+    margin-left: 80px;
+    transition: color 0.3s ease;
+    position: relative; /* Necessário para efeito da barra */
+}
+
+/* Barra animada que aparece ao passar o mouse sobre os links */
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 3px; /* Altura da barra */
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+/* Efeito de hover nos links da navbar */
+.navbar a:hover::before,
+.navbar a.active::before {
+    width: 100%;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #978f8f;
+}
+
+/* Animação de crescer/encolher para ícones */
+.navbar .icons a {
+    color: #f0f0f5; 
+    animation: growShrink var(--grow-shrink-duration) infinite;
+}
+
+/* Keyframes da animação de crescer/encolher */
+@keyframes growShrink {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* Estilização geral dos parágrafos */
+p {
+    font-family: 'Nanum Gothic Coding', monospace;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+/* Estilização para texto com padding */
+.texto-com-padding {
+    padding: 10px;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+/* Container principal para o conteúdo */
+.container {
+    width: 80%;
+    margin-top: 100px;
+    color: #333;
+}
+
+/* Estilização dos títulos principais (h2) */
+h2 {
+    color: #25020294;
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: "Odibee Sans", sans-serif;
+    font-size: 28px;
+}
+
+/* Estilização dos subtítulos (h3) */
+h3 {
+    color: #25020294;
+    border-bottom: 2px solid #0000007e;
+    padding-bottom: 5px;
+    margin-top: 50px;
+    margin-bottom: 15px;
+    font-family: "Odibee Sans", sans-serif;
+    font-size: 24px;
+}
+
+/* Estilização das listas */
+.course-list {
+    list-style: none;
+    padding: 0;
+}
+
+.course-item {
+    margin-bottom: 15px;
+}
+
+/* Títulos dos cursos */
+.course-title {
+    font-weight: bold;
+    color: #2fc7a1;
+    font-family: "Odibee Sans", sans-serif;
+    font-size: 18px;
+}
+
+/* Instituições */
+.institution {
+    color: #555;
+    font-family: "Odibee Sans", sans-serif;
+    font-size: 16px;
+}
+
+/* Datas */
+.date {
+    color: #777;
+    font-style: italic;
+    font-family: "Odibee Sans", sans-serif;
+    font-size: 14px;
+}
+
+/* Centralização da imagem */
+.image-container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    width: 100%;
+    padding-right: 20px;
+    margin-top: 20px;
+}
+
+/* Estilização da imagem */
+#minha-imagem {
+    width: 20%; /* Tamanho da imagem */
+    height: auto; /* Mantém a proporção */
+    border-radius: 8px; /* Bordas arredondadas */
+    margin-top: -30px;
+    margin-bottom: 10px;
+}
+
+/* Estilização do texto na seção "Sobre mim" */
+.sobre-mim-texto {
+    font-family: "Odibee Sans", sans-serif;
+    font-size: 16px;
+}
+
+/* Espaçamento entre seções */
+.texto-com-padding {
+    padding: 50px;
+    margin-bottom: -30px;
+    margin-top: -50px;
+}
+
+/* Espaçamento entre texto anterior e o título "portfolio" */
+.texto-anterior {
+    margin-bottom: 20px;
+}
+
+/* Seção do portfolio */
+#portfolio {
+    margin-top: 20px;
+}
+
+/* Espaçamento entre a imagem e o próximo título */
+.titulo-proxima-secao {
+    margin-top: 20px;
+}
+
+/* Centralização do vídeo */
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Estilização do vídeo */
+.video-container video {
+    width: 100%;
+    height: auto; /* Mantém a proporção */
+}
+
+/* Estilização do footer */
+footer {
+    color: #4e4c4c;
+    padding: 5px 0;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    margin-top: 10px;
+}

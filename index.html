@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+
+        <!--Fonte Odibee Sans - Google Fonts--> 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap" rel="stylesheet"> 
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+        <title>Currículo</title>
+    </head>
+    <body>
+        <header class="header">
+            <p1 class="assinatura">Fernando Monteiro</p1> 
+            <nav class="navbar">
+                <div class="links">
+                    <a href="index.html#sobre-mim">Sobre mim</a>
+                    <a href="index.html#formacao">Formação</a>
+                    <a href="index.html#portfolio">Portfolio</a>
+                    <a href="contato.html">Contato</a>
+                </div>
+                <div class="icons">
+                    <a href="https://www.linkedin.com/in/fernando-monteiroeng/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/FernMonteiro" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/fmonteirooff/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </nav>
+        </header>
+        
+        
+        <div class="image-container">
+            <img id="minha-imagem" src="minhafoto1.png" alt="Descrição da imagem">
+        </div>
+
+        <section id="sobre-mim">
+            <h2>Sobre mim</h2>
+            <div class="texto-com-padding">
+                <p>Sou um profissional com formação em Técnico em Química, Engenharia Agrícola e Ambiental, e Engenharia de Segurança do Trabalho, atualmente mestrando em Engenharia Química. Tenho três MBAs na área de Administração e certificação Lean Seis Sigma Green Belt. Tenho experiência em recuperação de áreas degradadas e licenciamento ambiental. Na área de segurança no trabalho, apliquei treinamentos, elaborei PGRs, coletei dados e realizei visitas em empresas.
+
+                Fui gestor de vendas e executivo da AIESEC Vitória, comunicando-me em inglês e espanhol com escritórios internacionais. Atualmente, estou envolvido em uma pesquisa sobre Biodigestores Inteligentes, estudo Análise e Desenvolvimento de Sistemas, me especializo em Gestão da Qualidade e Processos, e desenvolvo um algoritmo em Python para análise de dados hidrológicos.
+                    
+                Nos meus momentos livres, adoro cantar, tocar violão, escrever um livro de fantasia, desenhar e viajar. Valorizo muito o tempo com a família e tenho uma paixão especial por gêneros musicais como folk, indie, blues, country, além do bom e velho rock 'n roll.</p>
+            </div>
+        </section>
+
+        <section id="formacao">
+            <h2>Formação</h2>
+            <h3>Títulos</h3>
+            <p>Técnico em Química</p>
+            <p>Engenheiro Agrícola</p>
+            <p>Engenheiro de Segurança do Trabalho</p>
+
+            <h3>Cursando</h3>
+            <p>Análise e Desenvolvimento de Sistemas (Uninter) - (2026)</p>
+            <p>Especialização em Gestão da Qualidade e Processos (FM2S) - (2024)</p>
+            <p>Mestrado em Engenharia Química - Universidade de Blumenau - SC (2026)</p>
+
+            <h3>Formação</h3>
+            <p>Técnico em Química - Colégio de Aplicação Emmanuel Leontsinis (2011)</p>
+            <p>Engenheiro Agrícola e Ambiental - Universidade Federal de Mato Grosso (2021)</p>
+
+            <h3>Especializações</h3>
+            <p>Gestão Empresarial (2021) - Uniasselvi</p>
+            <p>Gestão do Agronegócio (2022) - Uniasselvi</p>
+            <p>Gestão de Projetos (2023) - Uniasselvi</p>
+            <p>Metodologia do Ensino de Língua Inglesa (2023) - Uniasselvi</p>
+            <p>Engenharia de Segurança do Trabalho (2022) - PUC-MINAS</p>
+        </section>
+
+        <section id="portfolio">
+            <h2>Portfolio</h2>
+            <p>Este vídeo é uma produção musical realizada no aplicativo BandLab com instrumentos virtuais (MIDI).</p>
+            <div class="video-container">
+                <div id="player"></div>
+            </div>
+            
+            <script>
+                // Carrega a API do IFrame Player do YouTube de forma assíncrona
+                var tag = document.createElement('script');
+                tag.src = "https://www.youtube.com/iframe_api";
+                var firstScriptTag = document.getElementsByTagName('script')[0];
+                firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        
+                // Cria uma variável para o player
+                var player;
+        
+                // Esta função cria um player do YouTube após a API ser carregada
+                function onYouTubeIframeAPIReady() {
+                    player = new YT.Player('player', {
+                        height: '390',
+                        width: '640',
+                        videoId: 'n5_N7ZrsVIc',
+                        events: {
+                            'onReady': onPlayerReady,
+                            'onError': onPlayerError
+                        }
+                    });
+                }
+        
+                // Função chamada quando o player está pronto
+                function onPlayerReady(event) {
+                    // Removido o autoplay
+                    console.log('Player pronto, vídeo não será iniciado automaticamente.');
+                }
+        
+                // Função chamada quando ocorre um erro
+                function onPlayerError(event) {
+                    console.error('Erro ao carregar o vídeo:', event.data);
+                }
+            </script>
+        </section>
+                          
+        </section>
+        <footer>
+            <p>© 2024 Fernando Monteiro. Todos os direitos reservados.</p>
+        </footer>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const links = document.querySelectorAll('.navbar .links a');
+                const currentUrl = window.location.href;
+        
+                links.forEach(link => {
+                    if (link.href === currentUrl) {
+                        link.classList.add('active');
+                    }
+        
+                    link.addEventListener('click', function() {
+                        links.forEach(l => l.classList.remove('active'));
+                        this.classList.add('active');
+                    });
+                });
+            });
+        </script>
+        
+    </body>
+</html>
